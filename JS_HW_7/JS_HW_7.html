@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Homework_13-14</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<script type="text/template" id="template">
+    <form action="#" class="form">
+        <h1 class="test-title"><%= list[0].testTitle %></h1>
+        <% for (var i = 1; i < list.length; i++) { %>
+        <h2 class="form__question-title"><%= list[i].questionTitle %></h2>
+        <% $.each( list[i].answerList, function (key, value) { %>
+        <div class="form__checkbox">
+            <label><input class="form__input" type="radio" name="<%= list[i].inputName %>"><%- value %></label>
+        </div>
+        <% }); %>
+        <% }; %>
+        <input class="form__check-answer" type="submit" value="Проверить мои результаты">
+    </form>
+</script>
+
+</body>
+</html>
